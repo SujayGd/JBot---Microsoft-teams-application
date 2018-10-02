@@ -1,0 +1,13 @@
+//- extends layout.pug
+
+//- block content
+//-   div(class='font-semibold font-title') Hello, World
+//-   p Welcome to Microsoft Teams Hello World sample app (Node.js)
+
+
+extends layout.pug
+
+block content
+  //- div(class='font-semibold font-title') Hello, World
+  script(src='https://statics.teams.microsoft.com/sdk/v0.4/js/MicrosoftTeams.min.js')
+  script(type='text/javascript') microsoftTeams.initialize(); microsoftTeams.getContext(function(context) {  window.location.href = 'your company API url for jobs' + context.subEntityId; });

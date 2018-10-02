@@ -1,0 +1,113 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.0",
+    "version": "1.0.0",
+    "id": "efb97b66-c91e-4e51-b284-61dda56bd60e",
+    "packageName": "com.contoso.helloworld",
+    "developer": {
+        "name": "Microsoft Teams Hackfest",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://www.microsoft.com/privacy",
+        "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+    },
+    "name": {
+        "short": "Company Job Search",
+        "full": "Company Job Search for Microsoft Teams"
+    },
+    "description": {
+        "short": "Company Job Search for Microsoft Teams",
+        "full": "This sample app provides a very simple app for Company India Job Search."
+    },
+    "icons": {
+        "outline": "contoso20x20.png",
+        "color": "contoso96x96.png"
+    },
+    "accentColor": "#60A18E",
+    "staticTabs": [{
+        "entityId": "com.contoso.helloworld.CompanyJobs",
+        "name": "Company India Jobs",
+        "contentUrl": "https://india.Company.com/ListJobs/all",
+        "scopes": [
+            "personal",
+            "team"
+        ]
+    },
+    {
+        "entityId": "com.contoso.helloworld.JobDetails",
+        "name": "Job Details",
+        "contentUrl": "https://51dea7be.ngrok.io/hello",
+        "scopes": [
+            "personal",
+            "team"
+        ]
+    }],
+    "configurableTabs": [{
+        "configurationUrl": "https://51dea7be.ngrok.io/configure",
+        "canUpdateConfiguration": true,
+        "scopes": [
+            "team"
+        ]
+    }],
+    "bots": [{
+        "botId": "efb97b66-c91e-4e51-b284-61dda56bd60e",
+        "commandLists": [
+            {
+                "scopes": [
+                    "personal"
+                ],
+                "commands": [
+                    {
+                        "title": "Jobs in Bangalore for",
+                        "description": "I will search Jobs in Bangalore"
+                    },
+                    {
+                        "title": "Jobs in Chennai for ",
+                        "description": "I will search jobs in Chennnai"
+                    }
+                ]
+            },
+            {
+                "scopes": [
+                    "team"
+                ],
+                "commands": [
+                    {
+                        "title": "Jobs in Bangalore for",
+                        "description": "I will search Jobs in Bangalore"
+                    },
+                    {
+                        "title": "Jobs in Chennai for ",
+                        "description": "I will search jobs in Chennnai"
+                    }
+                ]
+            }
+        ],
+        "needsChannelSelector": false,
+        "isNotificationOnly": false,
+        "scopes": [
+            "team",
+            "personal"
+        ]
+    }],
+    
+    "composeExtensions": [{
+        "botId": "efb97b66-c91e-4e51-b284-61dda56bd60e",
+        "scopes": [
+            "personal",
+            "team"
+        ],
+        "commands": [{
+            "id": "getRandomText",
+            "description": "Gets some random text and images that you can insert in messages for fun.",
+            "title": "Get some random text for fun",
+            "initialRun": true,
+            "parameters": [{
+                "name": "cardTitle",
+                "description": "Card title to use",
+                "title": "Card title"
+            }]
+        }]
+    }],
+    "permissions": [],
+    "validDomains": []
+}
